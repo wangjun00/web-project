@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+span{color:red}
+input{color:red}
+#b {background: 
+url("../tu/mac.png") 50% -10% no-repeat ,
+url("../tu/donghua.gif") 50% -28% no-repeat;                     
+}
+h3{color:red}
+#b{background-color:pink;}
+/*  body{background: url("../tu/c.jpg") height="400" id="showImg"  width="1440"}  */
+
+
