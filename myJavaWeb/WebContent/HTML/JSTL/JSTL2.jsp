@@ -19,10 +19,10 @@ ${bookName}<br>
 	</c:forEach>
 	显示从10到15的整数值：
 	<br />
-	<c:forEach var="i" begin="1" end="100" step="2">
+	<c:forEach var="i" begin="1" end="10" step="1">
 ${i}&nbsp;
 </c:forEach>
-	<c:forEach var="i" begin="1" end="100" step="3">
+	<c:forEach var="i" begin="1" end="10" step="3">
 ${i}&nbsp;
 </c:forEach>
 
