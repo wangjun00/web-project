@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="users" class="com.wjnd.spring.Users">
+		<property name="name"><value>suanyun</value></property>
+		<property name="address" value="hefei" />
+		<property name="memo" value="This is my first Spring project!"></property>
+		<property name="age" value="22"></property>
+	</bean>
+	<bean id="users1" class="com.wjnd.spring.Users">
+		<property name="name"><value>zhangsan</value></property>
+		<property name="address" value="BenBu" />
+		<property name="memo" value="************"></property>
+		<property name="age" value="20"></property>
+		
+	</bean>
+
+</beans>
