@@ -19,13 +19,16 @@ public class UsersTest {
 	/**
 	 * 獲取session
 	 * @return
-	 * */
-	public Session getSession(){
-		sessionFactory=new Configuration().configure().buildSessionFactory();
-		session=sessionFactory.openSession();
-		
+	 * */                      
+	public Session getSession() {
+		System.out.println("从会话工厂获取session");
+		sessionFactory = new Configuration().configure().buildSessionFactory();
+		session = sessionFactory.openSession();
+
 		return session;
-	}	
+
+	}
+
 	/**
 	 *關閉session 
 	 * **/
@@ -34,7 +37,7 @@ public class UsersTest {
 			session.close();
 		if(sessionFactory !=null)
 			sessionFactory.close();
-		
+		System.out.println("关闭回话工厂了！");
 	}
 	/**
 	 * 插入數據
@@ -43,9 +46,13 @@ public class UsersTest {
 	 * */
 	public Long insert(Users users){
 		session=getSession();
+		System.out.println("获取回话到insert");
 		Transaction transaction=session.beginTransaction();//開始事物
+		System.out.println("开始事物了");
 		Long id=(Long) session.save(users);//保存表
+		System.out.println("保存表");
 		transaction.commit();
+		System.out.println("提交事物");
 		closeSession();
 		return id;
 	}
@@ -58,6 +65,7 @@ public class UsersTest {
 		session=getSession();
 		Transaction transaction=session.beginTransaction();
 		session.update(users);
+		System.out.println("更新数据");
 		transaction.commit();
 		closeSession();
 		
@@ -82,6 +90,7 @@ public class UsersTest {
 	public Users getUsersById(Long id){
 		session=getSession();
 		Users users=(Users) session.get(Users.class, id);
+		System.out.println("获取ID");
 		closeSession();
 		return users;
 	}
@@ -98,12 +107,14 @@ public class UsersTest {
 		
 		List<Users> usersList=(List<Users>)session.createQuery("from Users").getResultList();
 		closeSession();
+		System.out.println("获取表数据");
 		return usersList;
 		
 	}
 	public static void main(String[] args) {
 		UsersTest test=new UsersTest();
 		Long userId=test.insert(new Users(null, "jack11","jack11"));
+		System.out.println("输入jack11属性");
 		logger.info(userId);
 		//logger.info(test.getUsersById(userId));
 		
